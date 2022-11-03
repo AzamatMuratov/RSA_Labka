@@ -92,14 +92,14 @@ long int calculateD(long int x)
     long int k =1;
     while(1){
         k = k +t;
-        if(k % x ==0)
+        if(k % x ==0)                       // формула бойынша d саны условиесы
             return (k / x);
     }
 }
 long int calculatE()
 {
     for (i = 2; i < t; ++i) {
-        if (gcalculated(i,t) == 1)
+        if (gcalculated(i,t) == 1)              // открытый экспонента санынын условиесы
             return i;
     }
     return -1;
@@ -128,7 +128,7 @@ int main() {
         }
     }
     while(flag == 0);
-    cout << "enter message to be encrypted:\n";
+    cout << "text engiz\n";
     fflush(stdin);
 
     getline(cin, msg);
@@ -136,13 +136,13 @@ int main() {
         decryptedText[i] = msg[i];
     cout << i;
 
-    n = p*q;
-    t = (p-1) * (q-1);
-    long int e = calculatE();
-    long int d = calculateD(e);
+    n = p*q;                                     // rsa формула  открытый ключтын 1-ші саны
+    t = (p-1) * (q-1);                           // эйлер функциясы
+    long int e = calculatE();                    // "е" санын табамыз осы функция аркылы. открытая экспонента деп аталады
+    long int d = calculateD(e);               // е санын модуль бойынша кери саны
 
-    encrypt(e);
-    decrypt(d);
+    encrypt(e);                             // шифровка фунциясы
+    decrypt(d);                             // расшифрока функциясы
 
     system("PAUSE");
 
